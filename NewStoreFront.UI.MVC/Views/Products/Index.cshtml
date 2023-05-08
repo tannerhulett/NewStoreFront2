@@ -1,0 +1,111 @@
+﻿@model IEnumerable<NewStoreFront.DATA.EF.Models.Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<!-- product section -->
+<section class="product_section layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                Our <span>products</span>
+            </h2>
+        </div>
+
+        <p align="center">
+            @if (User.IsInRole("Admin"))
+            {
+                <a asp-action="Create" class="btn btn-dark">Add New Gadget</a>
+            }
+            <a asp-action="TiledProducts" class="btn btn-dark">Tiled View</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductPrice)
+                    </th>
+                    @*<th>
+                    @Html.DisplayNameFor(model => model.ProductDescription)
+                    </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.UnitsInStock)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UnitsOnOrder)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductImage)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Category)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Supplier)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.ProductId">
+                                @Html.DisplayFor(modelItem => item.ProductName)
+                            </a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductPrice)
+                        </td>
+                        @*<td>
+                    @Html.DisplayFor(modelItem => item.ProductDescription)
+                    </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UnitsInStock)
+                        </td>
+                        <td>
+                    @Html.DisplayFor(modelItem => item.UnitsOnOrder)
+                    </td>
+                    @*<td>
+                    @Html.DisplayFor(modelItem => item.IsDiscontinued)
+                    </td>*@
+                        <td>
+                            @*@Html.DisplayFor(modelItem => item.ProductImage)*@
+                            <img src="~/img/@item.ProductImage" class="img-fluid rounded-sm shadow-lg" alt="@item.ProductDescription">
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Supplier.SupplierName)
+                        </td>
+                        <td>
+                            @if (User.IsInRole("Admin"))
+                            {
+
+                                <a asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-dark">Edit</a>
+                                <span>|</span>
+                                @*<a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |*@
+
+                                @if (item.OrderProducts.Count() == 0) //no related records - ok to delete
+                                {
+                                    <a asp-action="Delete" asp-route-id="@item.ProductId" class="btn btn-dark">Delete</a>
+                                }
+                                else
+                                {
+                                    <a disabled="disabled" class="text-danger text-decoration-line-through"
+                           title="Cannot delete this Gadget as it is referenced by an Order">Delete</a>
+                                }
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

@@ -1,0 +1,217 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-NewStoreFront.UI.MVC-6aa531d9-d754-4541-b4bf-0756f6c493e7</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Controllers\AdministrationController.cs" />
+    <Content Include="Models\AdministrationViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\vendor\choices.js\src\" />
+    <Folder Include="wwwroot\vendor\choices.js\types\" />
+    <Folder Include="wwwroot\vendor\swiper\angular\angular\src\" />
+    <Folder Include="wwwroot\vendor\swiper\angular\esm2015\angular\src\" />
+    <Folder Include="wwwroot\vendor\swiper\types\modules\" />
+    <Folder Include="_Archive\vendor\choices.js\src\" />
+    <Folder Include="_Archive\vendor\choices.js\types\" />
+    <Folder Include="_Archive\vendor\swiper\angular\angular\src\" />
+    <Folder Include="_Archive\vendor\swiper\angular\esm2015\angular\src\" />
+    <Folder Include="_Archive\vendor\swiper\types\modules\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\style.blue.min.css.map" />
+    <None Include="wwwroot\css\style.default.min.css.map" />
+    <None Include="wwwroot\css\style.gold.min.css.map" />
+    <None Include="wwwroot\css\style.green.min.css.map" />
+    <None Include="wwwroot\css\style.pink.min.css.map" />
+    <None Include="wwwroot\css\style.red.min.css.map" />
+    <None Include="wwwroot\css\style.sea.min.css.map" />
+    <None Include="wwwroot\css\style.violet.min.css.map" />
+    <None Include="wwwroot\icons\orion-svg-sprite.svg" />
+    <None Include="wwwroot\js\demo.js" />
+    <None Include="wwwroot\js\front.js" />
+    <None Include="wwwroot\js\js-cookie.js" />
+    <None Include="wwwroot\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\vendor\bootstrap\js\bootstrap.esm.js" />
+    <None Include="wwwroot\vendor\bootstrap\js\bootstrap.esm.min.js" />
+    <None Include="wwwroot\vendor\bootstrap\js\bootstrap.js" />
+    <None Include="wwwroot\vendor\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\vendor\choices.js\public\assets\scripts\choices.js" />
+    <None Include="wwwroot\vendor\choices.js\public\assets\scripts\choices.min.js" />
+    <None Include="wwwroot\vendor\glightbox\js\glightbox.js" />
+    <None Include="wwwroot\vendor\glightbox\js\glightbox.min.js" />
+    <None Include="wwwroot\vendor\nouislider\nouislider.js" />
+    <None Include="wwwroot\vendor\nouislider\nouislider.min.js" />
+    <None Include="wwwroot\vendor\nouislider\nouislider.min.mjs" />
+    <None Include="wwwroot\vendor\nouislider\nouislider.mjs" />
+    <None Include="wwwroot\vendor\swiper\angular\bundles\swiper_angular.umd.js" />
+    <None Include="wwwroot\vendor\swiper\angular\esm2015\swiper-angular.js" />
+    <None Include="wwwroot\vendor\swiper\angular\esm2015\swiper_angular.js" />
+    <None Include="wwwroot\vendor\swiper\angular\fesm2015\swiper_angular.js" />
+    <None Include="wwwroot\vendor\swiper\core\breakpoints\getBreakpoint.js" />
+    <None Include="wwwroot\vendor\swiper\core\breakpoints\index.js" />
+    <None Include="wwwroot\vendor\swiper\core\breakpoints\setBreakpoint.js" />
+    <None Include="wwwroot\vendor\swiper\core\check-overflow\index.js" />
+    <None Include="wwwroot\vendor\swiper\core\classes\addClasses.js" />
+    <None Include="wwwroot\vendor\swiper\core\classes\index.js" />
+    <None Include="wwwroot\vendor\swiper\core\classes\removeClasses.js" />
+    <None Include="wwwroot\vendor\swiper\core\core.js" />
+    <None Include="wwwroot\vendor\swiper\core\defaults.js" />
+    <None Include="wwwroot\vendor\swiper\core\events-emitter.js" />
+    <None Include="wwwroot\vendor\swiper\core\events\index.js" />
+    <None Include="wwwroot\vendor\swiper\core\events\onClick.js" />
+    <None Include="wwwroot\vendor\swiper\core\events\onResize.js" />
+    <None Include="wwwroot\vendor\swiper\core\events\onScroll.js" />
+    <None Include="wwwroot\vendor\swiper\core\events\onTouchEnd.js" />
+    <None Include="wwwroot\vendor\swiper\core\events\onTouchMove.js" />
+    <None Include="wwwroot\vendor\swiper\core\events\onTouchStart.js" />
+    <None Include="wwwroot\vendor\swiper\core\grab-cursor\index.js" />
+    <None Include="wwwroot\vendor\swiper\core\grab-cursor\setGrabCursor.js" />
+    <None Include="wwwroot\vendor\swiper\core\grab-cursor\unsetGrabCursor.js" />
+    <None Include="wwwroot\vendor\swiper\core\images\index.js" />
+    <None Include="wwwroot\vendor\swiper\core\images\loadImage.js" />
+    <None Include="wwwroot\vendor\swiper\core\images\preloadImages.js" />
+    <None Include="wwwroot\vendor\swiper\core\loop\index.js" />
+    <None Include="wwwroot\vendor\swiper\core\loop\loopCreate.js" />
+    <None Include="wwwroot\vendor\swiper\core\loop\loopDestroy.js" />
+    <None Include="wwwroot\vendor\swiper\core\loop\loopFix.js" />
+    <None Include="wwwroot\vendor\swiper\core\moduleExtendParams.js" />
+    <None Include="wwwroot\vendor\swiper\core\modules\observer\observer.js" />
+    <None Include="wwwroot\vendor\swiper\core\modules\resize\resize.js" />
+    <None Include="wwwroot\vendor\swiper\core\slide\index.js" />
+    <None Include="wwwroot\vendor\swiper\core\slide\slideNext.js" />
+    <None Include="wwwroot\vendor\swiper\core\slide\slidePrev.js" />
+    <None Include="wwwroot\vendor\swiper\core\slide\slideReset.js" />
+    <None Include="wwwroot\vendor\swiper\core\slide\slideTo.js" />
+    <None Include="wwwroot\vendor\swiper\core\slide\slideToClickedSlide.js" />
+    <None Include="wwwroot\vendor\swiper\core\slide\slideToClosest.js" />
+    <None Include="wwwroot\vendor\swiper\core\slide\slideToLoop.js" />
+    <None Include="wwwroot\vendor\swiper\core\transition\index.js" />
+    <None Include="wwwroot\vendor\swiper\core\transition\setTransition.js" />
+    <None Include="wwwroot\vendor\swiper\core\transition\transitionEmit.js" />
+    <None Include="wwwroot\vendor\swiper\core\transition\transitionEnd.js" />
+    <None Include="wwwroot\vendor\swiper\core\transition\transitionStart.js" />
+    <None Include="wwwroot\vendor\swiper\core\translate\getTranslate.js" />
+    <None Include="wwwroot\vendor\swiper\core\translate\index.js" />
+    <None Include="wwwroot\vendor\swiper\core\translate\maxTranslate.js" />
+    <None Include="wwwroot\vendor\swiper\core\translate\minTranslate.js" />
+    <None Include="wwwroot\vendor\swiper\core\translate\setTranslate.js" />
+    <None Include="wwwroot\vendor\swiper\core\translate\translateTo.js" />
+    <None Include="wwwroot\vendor\swiper\core\update\index.js" />
+    <None Include="wwwroot\vendor\swiper\core\update\updateActiveIndex.js" />
+    <None Include="wwwroot\vendor\swiper\core\update\updateAutoHeight.js" />
+    <None Include="wwwroot\vendor\swiper\core\update\updateClickedSlide.js" />
+    <None Include="wwwroot\vendor\swiper\core\update\updateProgress.js" />
+    <None Include="wwwroot\vendor\swiper\core\update\updateSize.js" />
+    <None Include="wwwroot\vendor\swiper\core\update\updateSlides.js" />
+    <None Include="wwwroot\vendor\swiper\core\update\updateSlidesClasses.js" />
+    <None Include="wwwroot\vendor\swiper\core\update\updateSlidesOffset.js" />
+    <None Include="wwwroot\vendor\swiper\core\update\updateSlidesProgress.js" />
+    <None Include="wwwroot\vendor\swiper\modules\a11y\a11y.js" />
+    <None Include="wwwroot\vendor\swiper\modules\autoplay\autoplay.js" />
+    <None Include="wwwroot\vendor\swiper\modules\controller\controller.js" />
+    <None Include="wwwroot\vendor\swiper\modules\effect-cards\effect-cards.js" />
+    <None Include="wwwroot\vendor\swiper\modules\effect-coverflow\effect-coverflow.js" />
+    <None Include="wwwroot\vendor\swiper\modules\effect-creative\effect-creative.js" />
+    <None Include="wwwroot\vendor\swiper\modules\effect-cube\effect-cube.js" />
+    <None Include="wwwroot\vendor\swiper\modules\effect-fade\effect-fade.js" />
+    <None Include="wwwroot\vendor\swiper\modules\effect-flip\effect-flip.js" />
+    <None Include="wwwroot\vendor\swiper\modules\free-mode\free-mode.js" />
+    <None Include="wwwroot\vendor\swiper\modules\grid\grid.js" />
+    <None Include="wwwroot\vendor\swiper\modules\hash-navigation\hash-navigation.js" />
+    <None Include="wwwroot\vendor\swiper\modules\history\history.js" />
+    <None Include="wwwroot\vendor\swiper\modules\keyboard\keyboard.js" />
+    <None Include="wwwroot\vendor\swiper\modules\lazy\lazy.js" />
+    <None Include="wwwroot\vendor\swiper\modules\manipulation\manipulation.js" />
+    <None Include="wwwroot\vendor\swiper\modules\manipulation\methods\addSlide.js" />
+    <None Include="wwwroot\vendor\swiper\modules\manipulation\methods\appendSlide.js" />
+    <None Include="wwwroot\vendor\swiper\modules\manipulation\methods\prependSlide.js" />
+    <None Include="wwwroot\vendor\swiper\modules\manipulation\methods\removeAllSlides.js" />
+    <None Include="wwwroot\vendor\swiper\modules\manipulation\methods\removeSlide.js" />
+    <None Include="wwwroot\vendor\swiper\modules\mousewheel\mousewheel.js" />
+    <None Include="wwwroot\vendor\swiper\modules\navigation\navigation.js" />
+    <None Include="wwwroot\vendor\swiper\modules\pagination\pagination.js" />
+    <None Include="wwwroot\vendor\swiper\modules\parallax\parallax.js" />
+    <None Include="wwwroot\vendor\swiper\modules\scrollbar\scrollbar.js" />
+    <None Include="wwwroot\vendor\swiper\modules\thumbs\thumbs.js" />
+    <None Include="wwwroot\vendor\swiper\modules\virtual\virtual.js" />
+    <None Include="wwwroot\vendor\swiper\modules\zoom\zoom.js" />
+    <None Include="wwwroot\vendor\swiper\postinstall.js" />
+    <None Include="wwwroot\vendor\swiper\react\get-changed-params.js" />
+    <None Include="wwwroot\vendor\swiper\react\get-children.js" />
+    <None Include="wwwroot\vendor\swiper\react\get-params.js" />
+    <None Include="wwwroot\vendor\swiper\react\init-swiper.js" />
+    <None Include="wwwroot\vendor\swiper\react\loop.js" />
+    <None Include="wwwroot\vendor\swiper\react\params-list.js" />
+    <None Include="wwwroot\vendor\swiper\react\swiper-react.js" />
+    <None Include="wwwroot\vendor\swiper\react\swiper-slide.js" />
+    <None Include="wwwroot\vendor\swiper\react\swiper.js" />
+    <None Include="wwwroot\vendor\swiper\react\update-swiper.js" />
+    <None Include="wwwroot\vendor\swiper\react\use-isomorphic-layout-effect.js" />
+    <None Include="wwwroot\vendor\swiper\react\utils.js" />
+    <None Include="wwwroot\vendor\swiper\react\virtual.js" />
+    <None Include="wwwroot\vendor\swiper\shared\classes-to-selector.js" />
+    <None Include="wwwroot\vendor\swiper\shared\create-element-if-not-defined.js" />
+    <None Include="wwwroot\vendor\swiper\shared\create-shadow.js" />
+    <None Include="wwwroot\vendor\swiper\shared\dom.js" />
+    <None Include="wwwroot\vendor\swiper\shared\effect-init.js" />
+    <None Include="wwwroot\vendor\swiper\shared\effect-target.js" />
+    <None Include="wwwroot\vendor\swiper\shared\effect-virtual-transition-end.js" />
+    <None Include="wwwroot\vendor\swiper\shared\get-browser.js" />
+    <None Include="wwwroot\vendor\swiper\shared\get-device.js" />
+    <None Include="wwwroot\vendor\swiper\shared\get-support.js" />
+    <None Include="wwwroot\vendor\swiper\shared\utils.js" />
+    <None Include="wwwroot\vendor\swiper\svelte\get-changed-params.js" />
+    <None Include="wwwroot\vendor\swiper\svelte\get-params.js" />
+    <None Include="wwwroot\vendor\swiper\svelte\init-swiper.js" />
+    <None Include="wwwroot\vendor\swiper\svelte\params-list.js" />
+    <None Include="wwwroot\vendor\swiper\svelte\swiper-slide.svelte" />
+    <None Include="wwwroot\vendor\swiper\svelte\swiper-svelte.js" />
+    <None Include="wwwroot\vendor\swiper\svelte\swiper.svelte" />
+    <None Include="wwwroot\vendor\swiper\svelte\update-swiper.js" />
+    <None Include="wwwroot\vendor\swiper\svelte\utils.js" />
+    <None Include="wwwroot\vendor\swiper\swiper-bundle.esm.browser.js" />
+    <None Include="wwwroot\vendor\swiper\swiper-bundle.esm.browser.min.js" />
+    <None Include="wwwroot\vendor\swiper\swiper-bundle.esm.js" />
+    <None Include="wwwroot\vendor\swiper\swiper-bundle.js" />
+    <None Include="wwwroot\vendor\swiper\swiper-bundle.min.js" />
+    <None Include="wwwroot\vendor\swiper\swiper.esm.js" />
+    <None Include="wwwroot\vendor\swiper\vue\get-changed-params.js" />
+    <None Include="wwwroot\vendor\swiper\vue\get-children.js" />
+    <None Include="wwwroot\vendor\swiper\vue\get-params.js" />
+    <None Include="wwwroot\vendor\swiper\vue\init-swiper.js" />
+    <None Include="wwwroot\vendor\swiper\vue\loop.js" />
+    <None Include="wwwroot\vendor\swiper\vue\params-list.js" />
+    <None Include="wwwroot\vendor\swiper\vue\swiper-slide.js" />
+    <None Include="wwwroot\vendor\swiper\vue\swiper-vue.js" />
+    <None Include="wwwroot\vendor\swiper\vue\swiper.js" />
+    <None Include="wwwroot\vendor\swiper\vue\update-swiper.js" />
+    <None Include="wwwroot\vendor\swiper\vue\utils.js" />
+    <None Include="wwwroot\vendor\swiper\vue\virtual.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NewStoreFront.DATA.EF\NewStoreFront.DATA.EF.csproj" />
+  </ItemGroup>
+
+</Project>

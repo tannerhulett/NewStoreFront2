@@ -1,0 +1,54 @@
+﻿@model IEnumerable<NewStoreFront.DATA.EF.Models.Product>
+
+@{
+    ViewData["Title"] = "TiledProducts";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- product section -->
+<section class="product_section layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                Our <span>Products</span>
+            </h2>
+        </div>
+
+        <p align="center">
+            @if (User.IsInRole("Admin"))
+            {
+            <a asp-action="Create" class="btn btn-dark">Add New Gadget</a>
+            }
+            <a asp-action="Index" class="btn btn-dark">Table View</a>
+        </p>
+
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <!-- PRODUCT-->
+                <div class="col-lg-4 col-sm-6 style=" background-color: dimgray; border-color: black; border-radius: 2%"">
+                    <div class="product text-center">
+                        <div class="mb-3 position-relative">
+                            <div class="badge text-white bg-"></div><a class="d-block" asp-action="Details" asp-controller="Weapons" asp-route-id="@item.ProductId"><img class="img-fluid w-100" src="~/img/@item.ProductImage" alt="@item.ProductDescription"></a>
+                            <div class="product-overlay">
+                                <ul class="mb-0 list-inline">
+                                    <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i class="far fa-heart"></i></a></li>
+                                    <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" asp-action="AddToCart" asp-controller="ShoppingCart" asp-route-id="@item.ProductId">Add to cart</a></li>
+                                    <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h6> <a class="reset-anchor" asp-action="Details">@item.ProductImage</a></h6>
+                        <p class="small text-muted">
+                            @Html.DisplayFor(modelItem => item.ProductPrice)
+                        </p>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+<!-- end product section -->
