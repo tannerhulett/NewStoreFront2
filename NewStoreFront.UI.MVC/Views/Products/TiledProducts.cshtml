@@ -18,27 +18,28 @@
         <p align="center">
             @if (User.IsInRole("Admin"))
             {
-            <a asp-action="Create" class="btn btn-dark">Add New Gadget</a>
+                <span>
+                <a asp-action="Create" class="btn btn-dark">Add New Gadget</a>
+                <a asp-action="Index" class="btn btn-dark">Table View</a>
+                </span>
             }
-            <a asp-action="Index" class="btn btn-dark">Table View</a>
         </p>
 
         <div class="row">
 
             <div class="offset-3 col-sm-6">
 
-                @*<form asp-action="TiledProducts" method="get">
-                    
+                <form asp-action="TiledProducts" method="get">
+
                     <label for="categoryId" class="control-label text-center d-block">Filter by Category</label>
-                    <select name="categoryId" class="form-control text-center mb-3" asp-items="ViewBag.CategoryId">
+                    <select name="productId" class="form-control text-center mb-3" asp-items="ViewBag.CategoryId">
                         <option value="0">[Choose a Category]</option>
                     </select>
 
-                    
-                    <input type="text" name="searchTerm" class="form-control text-center" placeholder="Search Gadgets..." />
-                    <input type="submit" value="Go" class="btn btn-primary text-center w-50 d-block" />
+                    <input type="text" name="searchTerm" class="form-control text-center" placeholder="Search Product..." />
+                    <input type="submit" value="Go" class="btn btn-primary text-center w-50 Inline-block" />
 
-                </form>*@
+                </form>
 
                 @*
                 Display the number of results
@@ -127,6 +128,24 @@
             }
 
         </div>
+
+        @*
+            Paged List Pager/Counter
+        *@
+        @*<div class="row mt-5">
+            <div class="w-50 mx-auto text-center">
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+            </div>
+            <div class="w-100">
+                 @Html.PagedListPager(
+                 Model,
+                 page => Url.Action("TiledProducts",
+                 new {page, searchTerm = ViewBag.SearchTerm, categoryId = ViewBag.Category })
+                )
+            </div>
+        </div>*@
+
+
     </div>
 </section>
 <!-- end product section -->

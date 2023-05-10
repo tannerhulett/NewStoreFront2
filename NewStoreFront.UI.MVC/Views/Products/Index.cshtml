@@ -90,7 +90,7 @@
 
                                 <a asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-dark">Edit</a>
                                 <span>|</span>
-                                @*<a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |*@
+                                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> 
 
                                 @if (item.OrderProducts.Count() == 0) //no related records - ok to delete
                                 {

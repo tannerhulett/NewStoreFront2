@@ -51,14 +51,52 @@ public class ProductsController : Controller
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> TiledProducts()
+        public async Task<IActionResult> TiledProducts(string searchTerm, int categoryId = 0, int page = 1)
         {
-            
+            int pageSize = 6;
+
             var products = _context.Products
                 .Include(p => p.Category)
                 .Include(p => p.Supplier)
                 .Include(p => p.OrderProducts).ToList();
+
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryName");
+
+            ViewBag.Category = 0;
+
+            if (categoryId != 0)
+            {
+                products = products.Where(p => p.CategoryId == categoryId).ToList();
+
+                //Repopulate the dropdown with current category selected
+                ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "ProductType", categoryId);
+
+                ViewBag.Category = categoryId;
+            }
+
+            if (!String.IsNullOrEmpty(searchTerm))
+            {
+                products = products.Where(p =>
+                    p.ProductName.ToLower().Contains(searchTerm.ToLower()) ||
+                    p.Supplier.SupplierName.ToLower().Contains(searchTerm.ToLower()) ||
+                    p.Category.CategoryName.ToLower().Contains(searchTerm.ToLower()) ||
+                    p.ProductDescription.ToLower().Contains(searchTerm.ToLower())).ToList();
+
+                //Viewbag for the total number of results
+                ViewBag.NbrResults = products.Count();
+
+                //Viewbag for the search term
+                ViewBag.SearchTerm = searchTerm;
+
+            }
+            else
+            {
+                ViewBag.NbrResults = null;
+                ViewBag.SearchTerm = null;
+            }
+
             return View(products);
+
         }
 
         // GET: Products/Create

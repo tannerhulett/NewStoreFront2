@@ -85,11 +85,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-3 pl-sm-0"><a class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0" style="background-color: #35363A !important;" href="cart.html">Add to cart</a></div>
+                    <li class="list-inline-item m-0 p-3"><a class="btn btn-sm btn-dark" asp-action="AddToCart" asp-controller="ShoppingCart" asp-route-id="@Model.ProductId">Add to cart</a></li>
                 </div><a class="text-dark p-0 mb-4 d-inline-block" href="#!"><i class="far fa-heart me-2"></i>Add to wish list</a><br>
                 <ul class="list-unstyled small d-inline-block">
                     <li class="px-3 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Category ID:</strong><a class="reset-anchor ms-2">@Model.CategoryId</a></li>
-                    <li class="px-3 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Ability ID:</strong><a class="reset-anchor ms-2">@Model.SupplierId</a></li>
+                    @*<li class="px-3 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Ability ID:</strong><a class="reset-anchor ms-2">@Model.SupplierId</a></li>*@
                 </ul>
             </div>
         </div>
