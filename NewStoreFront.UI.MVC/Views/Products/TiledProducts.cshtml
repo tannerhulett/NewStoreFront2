@@ -4,7 +4,7 @@
     ViewData["Title"] = "TiledProducts";
 }
 
-<h1>@ViewData["Title"]</h1>
+@*<h1>@ViewData["Title"]</h1>*@
 
 <!-- product section -->
 <section class="product_section layout_padding">
@@ -25,13 +25,91 @@
 
         <div class="row">
 
+            <div class="offset-3 col-sm-6">
+
+                @*<form asp-action="TiledProducts" method="get">
+                    
+                    <label for="categoryId" class="control-label text-center d-block">Filter by Category</label>
+                    <select name="categoryId" class="form-control text-center mb-3" asp-items="ViewBag.CategoryId">
+                        <option value="0">[Choose a Category]</option>
+                    </select>
+
+                    
+                    <input type="text" name="searchTerm" class="form-control text-center" placeholder="Search Gadgets..." />
+                    <input type="submit" value="Go" class="btn btn-primary text-center w-50 d-block" />
+
+                </form>*@
+
+                @*
+                Display the number of results
+                *@
+                @if (ViewBag.NbrResults != null)
+                {
+                    <p class="mt-5 p-2 alert-warning text-center">
+                        Showing @ViewBag.NbrResults result@(ViewBag.NbrResults > 1 ? "s" : "") for '@ViewBag.SearchTerm'...
+                    </p>
+                }
+
+            </div>
+
+
+
+            @*@foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-md-4 col-lg-4">
+                    <div class="box">
+                        <div class="option_container">
+                            <div class="options">
+                                <a asp-action="Details" asp-route-id="@item.ProductId" class="option1">
+                                    @item.ProductName
+                                </a>
+                                <a asp-action="AddToCart" asp-controller="ShoppingCart" asp-route-id="@item.ProductId" class="option2">
+                                    Add To Cart
+                                </a>
+                            </div>
+                        </div>
+                        <div class="img-box">
+                            <img src="~/images/@item.ProductImage" alt="@item.ProductDescription">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                @item.ProductName
+                            </h5>
+                            <h6>
+                                @Html.DisplayFor(modelItem => item.ProductPrice)
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            }*@
+        </div>
+
+        <div class="btn-box">
+            <a asp-action="TiledProducts">
+                View All products
+            </a>
+        </div>
+
+        <div class="row">
+
             @foreach (var item in Model)
             {
                 <!-- PRODUCT-->
                 <div class="col-lg-4 col-sm-6 style=" background-color: dimgray; border-color: black; border-radius: 2%"">
                     <div class="product text-center">
                         <div class="mb-3 position-relative">
-                            <div class="badge text-white bg-"></div><a class="d-block" asp-action="Details" asp-controller="Weapons" asp-route-id="@item.ProductId"><img class="img-fluid w-100" src="~/img/@item.ProductImage" alt="@item.ProductDescription"></a>
+                            <div class="badge text-white bg-"></div><a class="d-block" asp-action="Details" asp-route-id="@item.ProductId">
+                                <img class="img-fluid w-50" src="~/img/@item.ProductImage" alt="@item.ProductDescription">
+                                
+                                <div class="detail-box">
+                            <h5>
+                                @item.ProductName
+                            </h5>
+                            <h6>
+                                @Html.DisplayFor(modelItem => item.ProductPrice)
+                            </h6>
+                        </div>
+                        </a>
                             <div class="product-overlay">
                                 <ul class="mb-0 list-inline">
                                     <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i class="far fa-heart"></i></a></li>
@@ -40,10 +118,10 @@
                                 </ul>
                             </div>
                         </div>
-                        <h6> <a class="reset-anchor" asp-action="Details">@item.ProductImage</a></h6>
-                        <p class="small text-muted">
+                        <h6> @*<a class="reset-anchor" asp-action="Details">@item.ProductImage</a></h6>*@
+                        @*<p class="small text-muted">
                             @Html.DisplayFor(modelItem => item.ProductPrice)
-                        </p>
+                        </p>*@
                     </div>
                 </div>
             }

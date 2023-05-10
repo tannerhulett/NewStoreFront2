@@ -53,18 +53,18 @@
                             <li class="nav-item">
                                 <!-- Link--> <a class="nav-link" asp-action="Index" asp-controller="Products">Shop</a>
                             </li>
-                            <li class="nav-item"> 
+                            @*<li class="nav-item"> 
                                 <!-- Link--><a class="nav-link" asp-action="Details" asp-controller="Products">Product detail</a>
-                            </li>
+                            </li>*@
                             @* <!--TODO - hide pages->*@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                 <div class="dropdown-menu mt-3 shadow-sm" aria-labelledby="pagesDropdown">
-                                    <a class="dropdown-item border-0 transition-link" asp-action="Index" asp-controller="Home">Home</a>
+                                    @*<a class="dropdown-item border-0 transition-link" asp-action="Index" asp-controller="Home">Home</a>*@
                                     <a class="dropdown-item border-0 transition-link" asp-action="TiledProducts" asp-controller="Products">Shop</a>
                                     <a class="dropdown-item border-0 transition-link" asp-action="Index" asp-controller="OrderProducts">Product detail</a>
-                                    <a class="dropdown-item border-0 transition-link" asp-action="Cart" asp-controller="Home">Shopping cart</a>
-                                    <a class="dropdown-item border-0 transition-link" asp-action="CheckOut" asp-controller="Home">Checkout</a>
+                                    @*<a class="dropdown-item border-0 transition-link" asp-action="Cart" asp-controller="Home">Shopping cart</a>*@
+                                    @*<a class="dropdown-item border-0 transition-link" asp-action="CheckOut" asp-controller="Home">Checkout</a>*@
                                 </div>
                             </li>
                             @if (signInManager.IsSignedIn(User))
@@ -85,7 +85,7 @@
                             </li>
                         </ul>
                         <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link" asp-action="Cart" asp-controller="Home"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Cart<small class="text-gray fw-normal">(2)</small></a></li>
+                            <li class="nav-item"><a class="nav-link" asp-action="Cart" asp-controller="Home"> <i class="fas fa-dolly-flatbed me-1 text-black"></i>Cart<small class="text-gray fw-normal"></small></a></li>
                             <partial name="_LoginPartial" />
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
